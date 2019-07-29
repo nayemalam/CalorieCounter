@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>How Many Calories?</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <!-- Externals -->
+        <link rel="stylesheet" href="assets/css/lib/bulma.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <!-- <h1>Calculate your daily calories under 1 minute: </h1> -->
+        <span class="header">Using the Mifflin-St. Jeor equation.</span>
+        
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-half">
+
+                    <div class="field">
+                    <label class="label">Sex: </label>
+                    <div class="control">
+                        <div class="select">
+                        <select id="sex">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="field has-addons">
+                        <div class="control">
+                        <input id="weightInput" class="input" type="number" placeholder="Weight">
+                        </div>
+                        <div class="control">
+                            <div class="select">
+                            <select id="weightType">
+                                <option value="kg">kg</option>
+                                <option value="lbs">lbs</option>
+                            </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field has-addons">
+                        <div class="control">
+                        <input id="heightInput" class="input" type="number" placeholder="Height">
+                        </div>
+                        <div class="control">
+                            <div class="select">
+                            <select id="heightType">
+                                <option value="inches">inches</option>
+                                <option value="cm">cm</option>
+                            </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="field has-addons">
+                        <div class="control">
+                            <input id="age" class="input" type="number" placeholder="Age">
+                        </div>
+                        <div>
+                            <p style="margin-left: 15px;">years</p>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                    <label class="label">How active are you? </label>
+                    <div class="control">
+                        <div class="select">
+                        <select id="activityType">
+                            <option value="sedentary">Sedentary (little or no exercise)</option>
+                            <option value="lightly-active">Lightly Active (exercise 1-3x/week)</option>
+                            <option value="moderately-active">Moderately Active (exercise 3-5x/week)</option>
+                            <option value="very-active">Very Active (exercise 5-7x/week)</option>
+                            <option value="highly-active">Highly Active (intense exercise 5-7x/week)</option>
+                        </select>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="field">
+                    <label class="label inline">Your BMR (basal metabolic rate):</label>
+                        <div class="control">
+                            <p class="bmr">-</p>
+                        </div>
+                    </div>
+
+                    <h3 class="subtitle is-5 top">Your daily required calories are: <span class="calories">-</span></h3>
+
+                    <div class="field is-grouped is-grouped-centered">
+                        <p class="control submit">
+                            <a class="button is-primary">
+                            Submit
+                            </a>
+                        </p>
+                        <p class="control reset">
+                            <a class="button is-light">
+                            Reset
+                            </a>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        
+        <script src="assets/js/app.js"></script>
+        <script src="assets/js/lib/all.min.js"></script>
+    </body>
+</html>

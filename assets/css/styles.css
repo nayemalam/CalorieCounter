@@ -1,0 +1,11 @@
+.top {
+    margin-top: 30px;
+}
+
+.field.has-addons {
+    display: inline-flex !important;
+}
+
+.height {
+    margin-left: 35px;
+}
