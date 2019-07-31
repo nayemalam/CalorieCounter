@@ -6,6 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
         <title>How Many Calories?</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,30 +20,48 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <!-- <h1>Calculate your daily calories under 1 minute: </h1> -->
-        <span class="header">Using the Mifflin-St. Jeor equation.</span>
+        <section class="hero is-primary is-medium">
+        <div class="hero-body">
+            <div class="container" style="text-align: center; margin-bottom: -40px !important;">
+            <h1 class="title">
+                How many calories do you need per day 🤔
+            </h1>
+            <h2 class="subtitle">
+                Simple Calorie Calculator <br/>
+                <span style="color: rgb(100, 100, 100);">- Using the <a href="https://www.freedieting.com/calorie-needs" class="link" target="_blank">Mifflin St Jeor equation.</a></span>
+            </h2>
+            </div>
+        </div>
+        </section>
         
-        <div class="container">
+        <div class="container" style="padding-top: 40px;">
             <div class="columns is-centered">
                 <div class="column is-half">
 
                     <div class="field">
                     <label class="label">Sex: </label>
-                    <div class="control">
-                        <div class="select">
-                        <select id="sex">
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                        </select>
+                    <div class="control has-icons-left">
+                        <div class="select is-primary">
+                            <select id="sex">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                        <div class="icon is-small is-left">
+                            <i class="fas fa-venus-mars"></i>
                         </div>
                     </div>
                     </div>
 
                     <div class="field has-addons">
-                        <div class="control">
-                        <input id="weightInput" class="input" type="number" placeholder="Weight">
+                        <div class="control has-icons-left">
+                        <input id="weightInput" class="input is-primary" type="number" placeholder="Weight">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-balance-scale-right"></i>
+                        </span>
                         </div>
                         <div class="control">
-                            <div class="select">
+                            <div class="select is-primary">
                             <select id="weightType">
                                 <option value="kg">kg</option>
                                 <option value="lbs">lbs</option>
@@ -52,22 +71,28 @@
                     </div>
 
                     <div class="field has-addons">
-                        <div class="control">
-                        <input id="heightInput" class="input" type="number" placeholder="Height">
+                        <div class="control has-icons-left">
+                        <input id="heightInput" class="input is-primary" type="number" placeholder="Height">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-ruler-combined"></i>
+                        </span>
                         </div>
                         <div class="control">
-                            <div class="select">
+                            <div class="select is-primary">
                             <select id="heightType">
-                                <option value="inches">inches</option>
                                 <option value="cm">cm</option>
+                                <option value="inches">inches</option>
                             </select>
                             </div>
                         </div>
                     </div>
                     
                     <div class="field has-addons">
-                        <div class="control">
-                            <input id="age" class="input" type="number" placeholder="Age">
+                        <div class="control has-icons-left">
+                            <input id="age" class="input is-primary" type="number" placeholder="Age">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-hashtag"></i>
+                            </span>
                         </div>
                         <div>
                             <p style="margin-left: 15px;">years</p>
@@ -76,8 +101,8 @@
 
                     <div class="field">
                     <label class="label">How active are you? </label>
-                    <div class="control">
-                        <div class="select">
+                    <div class="control has-icons-left">
+                        <div class="select is-primary">
                         <select id="activityType">
                             <option value="sedentary">Sedentary (little or no exercise)</option>
                             <option value="lightly-active">Lightly Active (exercise 1-3x/week)</option>
@@ -85,6 +110,9 @@
                             <option value="very-active">Very Active (exercise 5-7x/week)</option>
                             <option value="highly-active">Highly Active (intense exercise 5-7x/week)</option>
                         </select>
+                        </div>
+                        <div class="icon is-small is-left">
+                            <i class="fas fa-walking"></i>
                         </div>
                     </div>
                     </div>

@@ -7,5 +7,12 @@
 }
 
 .height {
-    margin-left: 35px;
+    margin-left: 25px;
+}
+
+.link {
+    color: rgb(100, 100, 100) !important;
+}
+.link:hover {
+    text-decoration: underline;
 }
