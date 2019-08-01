@@ -11,7 +11,6 @@ var activityType = document.getElementById("activityType");
 var calories = document.querySelector(".calories");
 var submit = document.querySelector(".submit");
 var reset = document.querySelector(".reset");
-
 // get media query
 var mq = window.matchMedia( "(max-width: 768px)" );
 
@@ -67,7 +66,7 @@ submit.addEventListener("click", function() {
         }
     }
     else if (isNaN(weightInput.value) || isNaN(heightInput.value)) {
-        alert("Something wrong with the code, please contact: github/nayemalam")
+        alert("Something wrong with the code, please contact: github/nayemalam");
     } 
 });
 
