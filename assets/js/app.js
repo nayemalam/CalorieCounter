@@ -9,43 +9,14 @@ var age = document.getElementById("age");
 var bmr = document.querySelector(".bmr");
 var activityType = document.getElementById("activityType");
 var calories = document.querySelector(".calories");
-var multiplier = 0;
 var submit = document.querySelector(".submit");
 var reset = document.querySelector(".reset");
 
-// only when genders are changed
-// sex.addEventListener("input", function() {
-//     if(sex.value == "male") {
-//         console.log("I am male");
-//     }
-//     if(sex.value == "female") {
-//         console.log("I am female");
-//     }
-// });
-
-// weightType.addEventListener("input", function() {
-//     if(weightType.value == "kg") {
-//         console.log("I chose kg");
-//         console.log(weightInput.value);
-//     }
-//     if(weightType.value == "lbs") {
-//         console.log("I chose pounds");
-//         console.log(weightInput.value);
-//     }
-// });
-
-// heightType.addEventListener("input", function() {
-//     if(heightType.value == "kg") {
-//         console.log("I chose kg");
-//     }
-//     if(heightType.value == "lbs") {
-//         console.log("I chose pounds");
-//     }
-// });
+// get media query
+var mq = window.matchMedia( "(max-width: 768px)" );
 
 submit.addEventListener("click", function() {
-    var total = 0, weight = 0, height = 0;
-    // activity factors from: https://www.exerciselifestyle.uk/nutrition/balancing-your-diet/
+    var total = 0, weight = 0, height = 0, multiplier = 0;
     if(activityType.value == "sedentary") {
         console.log("I am sedentary");
         multiplier = 1.2;
@@ -63,6 +34,9 @@ submit.addEventListener("click", function() {
         multiplier = 1.9;
     }
 
+    weight = weightInput.value;
+    height = heightInput.value;
+
     if(weightType.value == "lbs") {
         weight = weightInput.value*0.453592;
     }
@@ -73,26 +47,40 @@ submit.addEventListener("click", function() {
     if(sex.value == "male") {
         console.log("I am male");
         total = Math.round(10 * weight + 6.25 * height - 5*age.value + 5);
-        bmr.textContent = total, bmr.style.fontSize = "25px";
-        calories.textContent = total * multiplier + "/day", calories.style.fontSize = "50px";
+        if(mq.matches) {
+            bmr.textContent = total, bmr.style.fontSize = "20px;"
+            calories.textContent = total * multiplier + " calories/day", calories.style.fontSize = "25px";
+        } else {
+            bmr.textContent = total, bmr.style.fontSize = "25px";
+            calories.textContent = total * multiplier + " calories/day", calories.style.fontSize = "45px";
+        }
     } 
     if(sex.value == "female") {
         console.log("I am female");
         total = Math.round(10 * weight + 6.25 * height - 5*age.value - 161);
-        bmr.textContent = total, bmr.style.fontSize = "25px";
-        calories.textContent = total * multiplier + "/day", calories.style.fontSize = "50px";
+        if(mq.matches) {
+            bmr.textContent = total, bmr.style.fontSize = "20px;"
+            calories.textContent = total * multiplier + " calories/day", calories.style.fontSize = "25px";
+        } else {
+            bmr.textContent = total, bmr.style.fontSize = "25px";
+            calories.textContent = total * multiplier + " calories/day", calories.style.fontSize = "45px";
+        }
     }
     else if (isNaN(weightInput.value) || isNaN(heightInput.value)) {
         alert("Something wrong with the code, please contact: github/nayemalam")
     } 
 });
 
+
 reset.addEventListener("click", function() {
     sex.value = "male";
     weightType.value = "kg";
     heightType.value = "cm";
     activityType.value = "sedentary";
+    bmr.textContent = "-", bmr.style.fontSize = "20px";
+    calories.textContent = "-", calories.style.fontSize = "20px";
     console.log("reset");
 });
 
-
+// activity factors from: https://www.exerciselifestyle.uk/nutrition/balancing-your-diet/
+// methodology from: https://www.healthline.com/nutrition/how-many-calories-per-day

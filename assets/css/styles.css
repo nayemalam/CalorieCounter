@@ -16,3 +16,18 @@
 .link:hover {
     text-decoration: underline;
 }
+
+@media only screen and (max-width: 768px) {
+    html {
+        margin: 8px !important;
+    }
+    .column {
+        padding: 50px !important;
+    }
+    .title {
+        font-size: 20px !important;
+    }
+    .subtitle, .link {
+        font-size: 15px !important;
+    }
+  }
